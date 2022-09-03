@@ -14,7 +14,7 @@ const gallery = document.querySelector('.gallery');
 const loadMore = document.querySelector('.load-more');
 
 form.addEventListener('submit', searchForImages);
-loadMore.addEventListener('submit', getMoreImages);
+loadMore.addEventListener('click', getMoreImages);
 
 function clear() {
     gallery.innerHTML = '';
@@ -50,7 +50,7 @@ function getMoreImages() {
     page += 1;
     images(query, page, perPage)
         .then(({ data }) => {
-            getGallery(data.this);
+            getGallery(data.hits);
             lightbox.refresh();
             const allPages = Math.ceil(data.hits / perPage);
             if (page > allPages) {
