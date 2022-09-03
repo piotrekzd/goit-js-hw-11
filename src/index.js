@@ -37,7 +37,7 @@ images(query, page, perPage)
         else {
             getGallery(data.hits);
             lightbox.refresh();
-            Notiflix.Notify.success('We have found ${data.totalHits} images!')
+            Notiflix.Notify.success(`We have found ${data.totalHits} images!`)
         }
  })
 };
