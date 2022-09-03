@@ -29,17 +29,21 @@ function searchForImages(e) {
         Notiflix.Notify.info("Feel free to look for some images!")
         return;
     };
-images(query, page, perPage)
-    .then(({ data }) => {
-        if (!data.totalHits) {
-            Notiflix.Notify.failure('Sorry, we have not found any images matching your query... Please try again.');
-        }
-        else {
-            getGallery(data.hits);
-            lightbox.refresh();
-            Notiflix.Notify.success(`We have found ${data.totalHits} images!`)
-        }
- })
+    images(query, page, perPage)
+        .then(({ data }) => {
+            if (!data.totalHits) {
+                Notiflix.Notify.failure('Sorry, we have not found any images matching your query... Please try again.');
+            }
+            else {
+                getGallery(data.hits);
+                lightbox.refresh();
+                Notiflix.Notify.success(`We have found ${data.totalHits} images!`)
+                if (data.totalHits > perPage) {
+                    loadMore.classList.remove('.is-hidden');
+                };
+            };
+        })
+        .catch(error => console.log(error));
 };
 
 function getMoreImages() {
@@ -52,9 +56,8 @@ function getMoreImages() {
             if (page > allPages) {
                 loadMore.classList.add('.is-hidden');
                 Notiflix.Notify.failure('Sorry, you have reached the limit of search results.');
-            }
-        }
-        )
+            };
+        })
         .catch(error => console.log(error));
 };
 
@@ -83,8 +86,7 @@ function getGallery(data) {
                 <b>Downloads</b>${downloads}</p>
                 </div>
                 </div>`
-            }
-        )
+            })
         .join('');
     
     gallery.insertAdjacentHTML('beforeend', markup);
