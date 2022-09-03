@@ -6,6 +6,26 @@
     <title>GoIT Homework 11</title>
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
-  <body>  
+  <body>
+    <div class="wrapper">
+     <form class="search-form" id="search form">
+        <input 
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search for images here..."
+          />
+          <button type="submit" class="search-button">
+            <svg width="20" height="20">
+              <use href="./images/icons.svg#icon-search"></use>
+            </svg>
+          </button>
+     </form>
+    </div>
+    <div class="gallery">
+
+    </div>
+    <button type="submit" class="load-more is-hidden">load more </button>
+    <script type="module" src="./index.js"></script> 
   </body>
 </html>
