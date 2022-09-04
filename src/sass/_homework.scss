@@ -94,10 +94,11 @@ img {
     font-weight: 700;
     text-transform: uppercase;
     transition: all 750ms;
-    
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 .load-more:hover {
+    color: #f1f1f1;
     transform: scale(1.1);
 }
 
