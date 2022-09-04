@@ -17,6 +17,7 @@ button {
 }
 
 .wrapper {
+    z-index: 5;
     position: fixed;
     padding: 20px;
     height: 100px;
@@ -54,11 +55,11 @@ button {
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    transition: all 750ms;
+    transition: all 500ms;
 }
 
 .card:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 img {
@@ -85,16 +86,21 @@ img {
     font-weight: 300;
 }
 
-.load-more.is-hidden {
-    display: none;
-}
-
 .load-more {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: 700;
     text-transform: uppercase;
     transition: all 750ms;
+    
 }
 
 .load-more:hover {
     transform: scale(1.1);
+}
+
+.load-more.is-hidden {
+    display: none;
 }

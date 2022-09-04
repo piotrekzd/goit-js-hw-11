@@ -39,7 +39,7 @@ function searchForImages(e) {
                 lightbox.refresh();
                 Notiflix.Notify.success(`We have found ${data.totalHits} images!`)
                 if (data.totalHits > perPage) {
-                    loadMore.classList.remove('.is-hidden');
+                    loadMore.classList.remove('is-hidden');
                 };
             };
         })
@@ -54,7 +54,7 @@ function getMoreImages() {
             lightbox.refresh();
             const allPages = Math.ceil(data.hits / perPage);
             if (page > allPages) {
-                loadMore.classList.add('.is-hidden');
+                loadMore.classList.add('is-hidden');
                 Notiflix.Notify.failure('Sorry, you have reached the limit of search results.');
             };
         })
